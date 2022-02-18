@@ -1,38 +1,150 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--pale-blue);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 50%; 
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+    width: 450px;
+    height: 700px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "card__header"
+        "card__body";
+}
+.card__header {
+    grid-area: card__header;
+    width: 450px;
+    height: 220px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.card__body {
+    grid-area: card__body;
+    width: 450px;
+    height: 480px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card__paragraph{
+    width: 80%;
+}
+
+.card__body__information {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--very-pale-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__body__icon {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__body__plan {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card__body__change {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card__body__change span {
+    color: var(--bright-blue);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.card__body__change span:hover {
+    color: var(--highlighted);
+}
+
+.card__body__button__payment {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bright-blue);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.card__body__button__payment:hover {
+    background-color: var(--highlighted);
+}
+
+.card__body__button__payment:active {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.card__body__button__cancel {
+    cursor: pointer;
+}
+
+.card__body__button__cancel:hover {
+    font-weight: 900;
+}
+
+@media (max-width: 460px) {
+    .card {
+        width: 320px;
+        height: 560px;
+    }
+
+    .card__header {
+        width: 320px;
+        height: 160px;
+    }
+
+    .card__body {
+        width: 320px;
+        height: 400px;
+        padding: 25px;
+    }
+
+    .card__body h1 {
+        font-size: 1.8em;
+    }
+
+    .card__paragraph {
+        width: 100%;
+    }
 }
